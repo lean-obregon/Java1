@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.student;
 
-import java.util.Scanner;
+import java.util.*;
+import java.util.StringTokenizer;
 
 public class JavaOne {
 
@@ -43,6 +44,24 @@ public class JavaOne {
 
     public void ex3() {
         System.out.println("Student 1: ex3.");
+        Scanner console = new Scanner(System.in);
+        System.out.println("Enter a sentence: ");
+        String input = console.nextLine();
+
+        StringTokenizer inputTokens = new StringTokenizer(input, " ");
+        console.close();
+
+        int x = 1;
+        while (inputTokens.hasMoreTokens()) {
+            if(x == 1){
+                System.out.print(inputTokens.nextToken().toUpperCase() + " ");
+                x *= -1;
+            }
+            else{
+                System.out.print(inputTokens.nextToken() + " ");
+                x *= -1;
+            }
+        }
     }
 
     public void ex4() {
