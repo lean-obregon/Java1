@@ -1,8 +1,8 @@
 package com.xpanxion.assignments.student;
 
-import java.sql.SQLOutput;
 import java.util.*;
 import java.util.StringTokenizer;
+import java.util.regex.*;
 
 public class JavaOne {
 
@@ -171,27 +171,26 @@ public class JavaOne {
         Scanner console = new Scanner(System.in);
 
         System.out.print("Enter price per square feet: ");
-        int price = console.nextInt();
+        double price = console.nextDouble();
+        double totalCost = 0;
 
-        int totalCost = 0;
-        String dimesions = null;
-
-        do {
+        while (true) {
             System.out.println("Enter room dimensions (width x height): ");
-            dimesions = console.nextLine();
+            String dimensions = console.next();
 
-            String[] dimensionList = dimesions.split("x");
-            int width = Integer.parseInt(dimensionList[0]);
-            int height = Integer.parseInt(dimensionList[1]);
-
-            if (dimesions.toLowerCase().equals("done")) {
+            if (dimensions.equalsIgnoreCase("done")) {
                 break;
             }
+
+            String[] dimensionsSplit = dimensions.split("x");
+
+            int width = Integer.parseInt(dimensionsSplit[0]);
+            int height = Integer.parseInt(dimensionsSplit[1]);
+
             totalCost += price * (width * height);
         }
-        while (!dimesions.toLowerCase().equals("done"));
-
-        System.out.println("Total cost: " + totalCost);
+        console.close();
+        System.out.printf("Total cost: $%.2f", totalCost);
     }
 
     public void ex9() {
