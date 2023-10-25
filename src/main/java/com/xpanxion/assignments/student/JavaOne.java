@@ -67,7 +67,7 @@ public class JavaOne {
     public void ex4() {
         System.out.println("Student 1: ex4.");
         Scanner console = new Scanner(System.in);
-        System.out.println("Enter a sentence: ");
+        System.out.println("Enter a word: ");
         String input = console.nextLine();
         console.close();
 
@@ -81,6 +81,43 @@ public class JavaOne {
 
     public void ex5() {
         System.out.println("Student 1: ex5.");
+        Scanner console = new Scanner(System.in);
+
+        int vowel = 0;
+        int consonant = 0;
+        String input;
+
+        do {
+            System.out.println("Enter a word or sentence: ");
+            input = console.nextLine();
+
+            if (input.equals("quit")) {
+                break;
+            }
+            
+            for (int i = 0; i < input.length(); i++) {
+                switch (input.toLowerCase().charAt(i)) {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        vowel += 1;
+                    case ' ':
+                    case '.':
+                    case '?':
+                    case '!':
+                        continue;
+                    default:
+                        consonant += 1;
+                }
+            }
+            System.out.println("Number of vowels: " + vowel);
+            System.out.println("Number of consonants: " + consonant);
+        }
+        while (!input.equals("quit"));
+
+        console.close();
     }
 
     public void ex6() {
