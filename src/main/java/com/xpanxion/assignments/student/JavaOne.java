@@ -167,10 +167,46 @@ public class JavaOne {
 
     public void ex8() {
         System.out.println("Student 1: ex8.");
+        Scanner console = new Scanner(System.in);
+
+        System.out.print("Enter price per square feet: ");
+        int price = console.nextInt();
+
+        int totalCost = 0;
+        String dimesions = null;
+
+        do {
+            System.out.println("Enter room dimensions (width x height): ");
+            dimesions = console.nextLine();
+
+            String[] dimensionList = dimesions.split("x");
+            int width = Integer.parseInt(dimensionList[0]);
+            int height = Integer.parseInt(dimensionList[1]);
+
+            if (dimesions.toLowerCase().equals("done")) {
+                break;
+            }
+            totalCost += price * (width * height);
+        }
+        while (!dimesions.toLowerCase().equals("done"));
+
+        System.out.println("Total cost: " + totalCost);
     }
 
     public void ex9() {
         System.out.println("Student 1: ex9.");
+        Scanner console = new Scanner(System.in);
+        int answer = (int)(Math.random() * 5) + 1;
+        int number = 0;
+
+        do {
+            System.out.print("Guess the number from 1-5: ");
+            number = console.nextInt();
+
+            System.out.println("Try again.");
+        }
+        while (number != answer);
+        System.out.println("You guessed it!");
     }
 
     public void ex10() {
