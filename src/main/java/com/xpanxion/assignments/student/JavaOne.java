@@ -135,6 +135,34 @@ public class JavaOne {
 
     public void ex7() {
         System.out.println("Student 1: ex7.");
+        Scanner console = new Scanner(System.in);
+        System.out.println("Enter the first number: ");
+        int num1 = console.nextInt();
+
+        System.out.println("Enter the second number: ");
+        int num2 = console.nextInt();
+
+        System.out.println("Enter an operation: add, sub, mul, div");
+        String operation = console.next();
+
+        if (true) {
+            switch (operation.toLowerCase()) {
+                case "add":
+                    System.out.println("Result: " + (num1 + num2));
+                    break;
+                case "sub":
+                    System.out.println("Result: " + (num1 - num2));
+                    break;
+                case "mul":
+                    System.out.println("Result: " + (num1 * num2));
+                    break;
+                case "div":
+                    System.out.println("Result: " + (num1 / num2));
+                    break;
+                default:
+                    System.out.println("Not valid entry");
+            }
+        }
     }
 
     public void ex8() {
