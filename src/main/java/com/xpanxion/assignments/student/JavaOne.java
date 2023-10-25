@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.student;
 
+import java.sql.SQLOutput;
 import java.util.*;
 import java.util.StringTokenizer;
 
@@ -206,11 +207,30 @@ public class JavaOne {
             System.out.println("Try again.");
         }
         while (number != answer);
+
+        console.close();
         System.out.println("You guessed it!");
     }
 
     public void ex10() {
         System.out.println("Student 1: ex10.");
+        Scanner console = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String input = console.nextLine();
+
+        String[] inputSplitter = input.split(" ");
+
+        for (int i = 0; i < inputSplitter.length; i++) {
+            for (int j = 0; j < inputSplitter[i].length(); j++) {
+                int count = 0;
+                while (count < j) {
+                    System.out.print(" ");
+                    count++;
+                }
+                System.out.println(inputSplitter[i].charAt(j));
+            }
+        }
     }
 
     //
